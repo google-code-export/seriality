@@ -2,22 +2,42 @@
 
 = Introduction =
 
-The Seriality API is modeled lightly off of the serial libraries of [http://processing.org/reference/libraries/serial Processing] and [http://wiring.org.co/reference/libraries/Serial/index.html Wiring]/[http://arduino.cc/en/Reference/Serial Arduino] with some alterations to make it friendlier for Javascript.
+The Seriality API is modeled lightly off of the serial libraries of [http://processing.org/reference/libraries/serial Processing] and [http://wiring.org.co/reference/libraries/Serial/index.html Wiring]/[http://arduino.cc/en/Reference/Serial Arduino] with some alterations to make it friendlier for Javascript. This API description covers the first version of the Seriality API (see the [SerialityAPI#Serial.apiVersion apiVersion] property).
 
 = Details =
 
-==Serial.begin(port, speed)==
-==Serial.end()==
-==Serial.read()==
-==Serial.readByte()==
-==Serial.readLine()==
-==Serial.readJSON()==
-==Serial.write(message)==
-==Serial.writeByte(message)==
-==Serial.available()==
-==Serial.refreshPorts()==
-==Serial.ports==
-==Serial.apiVersion==
+==Seriality()==
+
+The constructor must be called to create an instance of Seriality by which all other functions can be called. This is done by referencing the DOM element which contains the plug-in object. The constructor expects no parameters.
+
+{{{
+var serial = (document.getElementById("seriality")).Seriality();
+...
+<object type="application/Seriality" id="seriality" width="0" height="0"></object>
+}}}
+
+==begin(port, speed)==
+
+The begin function attempts to begin serial communications on the specified port at the specified speed. Valid ports are held in the [SerialityAPI#Serial.ports ports] array. Valid speeds are `1200`, `1800`, `2400`, `4800`, `9600`, `19200`, `38400`, `57600`, `115200`, and `230400`. When any other number is provided, the speed will default to `9600`. A boolean `true` the port was opened successfully; a boolean `false` is returned otherwise.
+
+{{{
+serial.begin("/dev/tty.usbserial-A9082r0E", 9600);
+}}}
+
+==end()==
+==read()==
+==readByte()==
+==readLine()==
+==readJSON()==
+==write(message)==
+==writeByte(message)==
+==available()==
+==refreshPorts()==
+==ports==
+
+Due to the popularity of FTDI usb to serial chips, any ports with the substring 'usbserial' will be 
+
+==apiVersion==
 
 Add your content here.  Format your content with:
   * Text in *bold* or _italic_
