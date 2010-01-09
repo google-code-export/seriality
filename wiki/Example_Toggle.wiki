@@ -12,7 +12,7 @@ This example shows how to control an LED with the browser via radio buttons. Thi
 
   <script type="text/javascript">
   
-    // make global reference to seriality instance
+    // make global reference
     var serial;
   
     function setup()
