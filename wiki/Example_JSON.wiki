@@ -44,9 +44,8 @@ This example demonstrates how to read a JSON formatted string from a device usin
         // transform JSON formatted string into an object
         data = eval('(' + json + ')');
 
-        // if transformation was successful
+        // if transformation was successful, populate text fields with the data
         if (undefined != data) {
-          // populate text fields with the data
           document.getElementById("knob").value = data.knob;
           document.getElementById("button").value = data.button;
         }
