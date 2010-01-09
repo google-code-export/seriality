@@ -2,11 +2,22 @@
 
 = Introduction =
 
-The Seriality API is modeled lightly off of [http://processing.org/reference/libraries/serial Processing's Serial Library] with some alterations to make it feel a bit more like Javascript.
+The Seriality API is modeled lightly off of the serial libraries of [http://processing.org/reference/libraries/serial Processing] and [http://wiring.org.co/reference/libraries/Serial/index.html Wiring]/[http://arduino.cc/en/Reference/Serial Arduino] with some alterations to make it friendlier for Javascript.
 
 = Details =
 
 ==Serial.begin(port, speed)==
+==Serial.end()==
+==Serial.read()==
+==Serial.readByte()==
+==Serial.readLine()==
+==Serial.readJSON()==
+==Serial.write(message)==
+==Serial.writeByte(message)==
+==Serial.available()==
+==Serial.refreshPorts()==
+==Serial.ports==
+==Serial.apiVersion==
 
 Add your content here.  Format your content with:
   * Text in *bold* or _italic_
