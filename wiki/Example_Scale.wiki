@@ -2,7 +2,7 @@
 
 = Scale Example =
 
-This example demonstrates how to read from a device using Seriality. It uses a query technique, querying the device for the latest analog reading. This technique offers a noticeable performance advantage and is lightweight enough to allow the page to perform other Javascript intensive tasks in an interleaved/controllable fashion.
+This example demonstrates how to read from a device using Seriality. It uses a query technique, querying the device for the latest analog reading. This technique offers a noticeable performance advantage and is lightweight enough to allow the page to perform other Javascript intensive tasks in an interleaved/controllable fashion. This example is also included in the Seriality installation package.
 
 == HTML/JS/Seriality ==
 
