@@ -1,4 +1,4 @@
-#summary Seriality API - Version 1
+#summary Seriality API
 
 = Introduction =
 
