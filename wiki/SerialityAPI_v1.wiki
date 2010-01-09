@@ -2,7 +2,7 @@
 
 = Introduction =
 
-The Seriality API is modeled lightly off of the serial libraries included with [http://processing.org/reference/libraries/serial Processing] and [http://wiring.org.co/reference/libraries/Serial/index.html Wiring]/[http://arduino.cc/en/Reference/Serial Arduino] with some alterations to make it friendlier for Javascript. This API description covers the first version of the Seriality API (see the [SerialityAPI#apiVersion apiVersion] property).
+The Seriality API is modeled lightly off of the serial libraries included with [http://processing.org/reference/libraries/serial Processing] and [http://wiring.org.co/reference/libraries/Serial/index.html Wiring]/[http://arduino.cc/en/Reference/Serial Arduino] with some alterations to make it friendlier for Javascript. This API description covers the first version of the Seriality API (see the [SerialityAPI_v1#apiVersion apiVersion] property).
 
 = Details =
 
@@ -18,7 +18,7 @@ var serial = (document.getElementById("seriality")).Seriality();
 
 ==begin(port, speed)==
 
-The `begin()` function attempts to begin serial communications on the specified port at the specified speed. Valid ports are held in the [SerialityAPI#ports ports] array. Valid speeds are `1200`, `1800`, `2400`, `4800`, `9600`, `19200`, `38400`, `57600`, `115200`, and `230400`. When any other number is provided, the speed will default to `9600`. A boolean `true` is returned when the port was opened successfully; a boolean `false` is returned otherwise.
+The `begin()` function attempts to begin serial communications on the specified port at the specified speed. Valid ports are held in the [SerialityAPI_v1#ports ports] array. Valid speeds are `1200`, `1800`, `2400`, `4800`, `9600`, `19200`, `38400`, `57600`, `115200`, and `230400`. When any other number is provided, the speed will default to `9600`. A boolean `true` is returned when the port was opened successfully; a boolean `false` is returned otherwise.
 
 {{{
 serial.begin("/dev/tty.usbserial-A9082r0E", 9600);
