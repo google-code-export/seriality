@@ -30,7 +30,7 @@ This example demonstrates how to use Seriality and JQuery together. This example
       $("#slider").slider({min:0, max:255, slide:updateLED});
 
       // instantiate seriality
-      serial = $("#seriality").Seriality();
+      serial = (document.getElementById("seriality")).Seriality();
 
       // begin serial communications on first known serial port at 9600 baud
       serial.begin(serial.ports[0], 9600);
