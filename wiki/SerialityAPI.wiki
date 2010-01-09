@@ -1,0 +1,14 @@
+#summary Seriality API
+
+= Introduction =
+
+The Seriality API is modeled lightly off of [http://processing.org/reference/libraries/serial Processing's Serial Library] with some alterations to make it feel a bit more like Javascript.
+
+= Details =
+
+==Serial.begin(port, speed)==
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
