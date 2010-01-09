@@ -4,7 +4,7 @@
 
 This example shows how to control an LED with the browser via radio buttons. This example is also included in the Seriality installation package.
 
-= HTML/JS/Seriality code for this example =
+== HTML/JS/Seriality code for this example ==
 
 {{{
 <html>
@@ -37,7 +37,7 @@ This example shows how to control an LED with the browser via radio buttons. Thi
 </html>
 }}}
 
-= Wiring/Arduino code for this example =
+== Wiring/Arduino code for this example ==
 
 {{{
 void setup()
