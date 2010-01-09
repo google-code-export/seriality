@@ -128,7 +128,7 @@ alert(serial.ports);
 
 ==apiVersion==
 
-The `apiVersion` property is supplied to mitigate the painful process of plug-in version detection. Since this property exists from the inception of the project, it is a reliable way to discern which API features are available for use on the client machine. Difficulties of plug-in detection are reduced to knowing simply whether or not the plug-in exists.
+The `apiVersion` property is supplied to mitigate the painful process of plug-in version detection. Since this property exists from the inception of the project, it is a reliable way to discern which API features are available for use on the client machine. Difficulties of plug-in detection are reduced to knowing simply whether or not the plug-in exists. Once you know that the plug-in is installed, you can rely on this property to accommodate API feature dependencies as the API matures.
 
 {{{
 alert("You have version " + serial.apiVersion + " of the Seriality API");
