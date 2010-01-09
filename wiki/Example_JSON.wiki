@@ -1,4 +1,4 @@
-#summary Example how to read and process JSON
+#summary How to read and process JSON
 
 = JSON Example =
 
