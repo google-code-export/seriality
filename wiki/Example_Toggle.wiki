@@ -12,13 +12,21 @@ This example shows how to control an LED with the browser via radio buttons. Thi
 
   <script type="text/javascript">
   
+    // make global reference to seriality instance
     var serial;
   
     function setup()
     {
+      // instantiate seriality
       serial = (document.getElementById("seriality")).Seriality();
+
+      // begin serial communications on first known port at 9600 baud
       serial.begin(serial.ports[0], 9600);
+
+      // write a '-' to set the initial state of the LED to off
       serial.write('-');
+
+      // note the use of 'onload' and 'onclick' below...
     }
  
   </script>
