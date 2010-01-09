@@ -109,7 +109,7 @@ if (serial.available()) {
 
 ==ports==
 
-The `ports` property is an array that contains all known serial ports of the client machine. The items in the `ports` array are suitable for use with the `begin()` function. Due to the popularity of FTDI&trade; usb-serial chips, any ports containing the substring 'usbserial' will appear at the front of the array as a convenience on UNIX platforms; do not rely on this convention alone though since it is subject to change in a future version.
+The `ports` property is an array that contains all known serial ports of the client machine. The items in the `ports` array are suitable for use with the `begin()` function. Due to the popularity of FTDI™ usb-serial chips, any ports containing the substring 'usbserial' will appear at the front of the array as a convenience on UNIX platforms; do not rely on this convention alone though since it is subject to change in a future version.
 
 {{{
 serial.begin(serial.ports[0], 9600);
@@ -121,7 +121,7 @@ To allow for pages that instruct the user to plug in their device after page loa
 
 {{{
 alert(serial.ports);
-alert("Plug in a device");
+alert("Plug in a device...");
 serial.refreshPorts();
 alert(serial.ports);
 }}}
