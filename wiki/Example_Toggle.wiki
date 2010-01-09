@@ -2,7 +2,7 @@
 
 = Toggle Example =
 
-This example shows how to control an LED with the browser via radio buttons. This example is also included in the Seriality installation package.
+This example demonstrates how to write to a device using Seriality to control an LED via radio buttons. This example is also included in the Seriality installation package.
 
 == HTML/JS/Seriality code for this example ==
 
