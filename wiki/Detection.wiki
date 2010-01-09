@@ -2,7 +2,7 @@
 
 = Introduction =
 
-Here is some sample code to detect Seriality. This has been tested on Safari, Firefox, and Chrome for Mac OS X. See the `apiVersion` mentioned in the API documentation for version checking.
+Some sample code to detect the Seriality browser plug-in is included below. This has been tested on Safari, Firefox, and Chrome for Mac OS X. See the `apiVersion` mentioned in the API documentation for version checking.
 
 {{{
 <html>
