@@ -2,7 +2,7 @@
 
 = Introduction =
 
-The Seriality API is modeled lightly off of the serial libraries of [http://processing.org/reference/libraries/serial Processing] and [http://wiring.org.co/reference/libraries/Serial/index.html Wiring]/[http://arduino.cc/en/Reference/Serial Arduino] with some alterations to make it friendlier for Javascript. This API description covers the first version of the Seriality API (see the [SerialityAPI#Serial.apiVersion apiVersion] property).
+The Seriality API is modeled lightly off of the serial libraries of [http://processing.org/reference/libraries/serial Processing] and [http://wiring.org.co/reference/libraries/Serial/index.html Wiring]/[http://arduino.cc/en/Reference/Serial Arduino] with some alterations to make it friendlier for Javascript. This API description covers the first version of the Seriality API (see the [SerialityAPI#apiVersion apiVersion] property).
 
 = Details =
 
@@ -10,25 +10,67 @@ The Seriality API is modeled lightly off of the serial libraries of [http://proc
 
 The constructor must be called to create an instance of Seriality by which all other functions can be called. This is done by referencing the DOM element which contains the plug-in object. The constructor expects no parameters.
 
-{{{
-var serial = (document.getElementById("seriality")).Seriality();
+{{{var serial = (document.getElementById("seriality")).Seriality();}}}
 ...
-<object type="application/Seriality" id="seriality" width="0" height="0"></object>
-}}}
+{{{<object type="application/Seriality" id="seriality" width="0" height="0"></object>}}}
 
 ==begin(port, speed)==
 
-The begin function attempts to begin serial communications on the specified port at the specified speed. Valid ports are held in the [SerialityAPI#Serial.ports ports] array. Valid speeds are `1200`, `1800`, `2400`, `4800`, `9600`, `19200`, `38400`, `57600`, `115200`, and `230400`. When any other number is provided, the speed will default to `9600`. A boolean `true` the port was opened successfully; a boolean `false` is returned otherwise.
+The `begin()` function attempts to begin serial communications on the specified port at the specified speed. Valid ports are held in the [SerialityAPI#ports ports] array. Valid speeds are `1200`, `1800`, `2400`, `4800`, `9600`, `19200`, `38400`, `57600`, `115200`, and `230400`. When any other number is provided, the speed will default to `9600`. A boolean `true` is returned when the port was opened successfully; a boolean `false` is returned otherwise.
 
-{{{
-serial.begin("/dev/tty.usbserial-A9082r0E", 9600);
-}}}
+{{{serial.begin("/dev/tty.usbserial-A9082r0E", 9600);}}}
 
 ==end()==
+
+The `end()` function ends serial communications by closing the port that was opened by the `begin()` function. It expects nothing and returns nothing; `end()` doesn't mess around.
+
+{{{serial.end();}}}
+
 ==read()==
+
+When successful, the `read()` function returns a string of length 1 created from a single char read from serial. When unsuccessful, it returns the empty string `""`.
+
+{{
+if (serial.available()) {
+  if ("x" == serial.read()) {...}
+}
+}}
+
 ==readByte()==
+
+The `readByte()` function differs from the `read()` function in that it returns an integer number rather than a string. This is intended to obviate the need for type conversion when using hexadecimal notation. 
+
+{{
+if (serial.available()) {
+  if (0xF3 == serial.readByte()) {...}
+}
+}}
+
 ==readLine()==
+
+To complement the use of `Serial.println()` in Wiring/Arduino, the `readLine()` function returns a string containing all characters preceding a newline `\n` or carriage return `\r` (whichever is encountered first). Any newlines and/or carriage returns occurring at the beginning of an incoming line are omitted from the return value. The single trailing newline and/or carriage return marking the end of the line is also removed from the return value.
+
+{{
+var message;
+if (serial.available()) {
+  message = serial.readLine();
+}
+}}
+
 ==readJSON()==
+
+To help with protocol creation and to ease difficulties related to type conversion, JSON is also supported. The `readJSON()` function expects a sequence of characters beginning with a `{`. It does not return a value until an equal number of opening and closing braces are received. Any further validation is expected to be handled in Javascript. This function returns an empty string `""` on error.
+
+{{
+var json;
+var data;
+if (serial.available()) {
+  json = serial.readJSON();
+  data = eval('(' + json + ')');
+  if (undefined != data) {...}
+}
+}}
+
 ==write(message)==
 ==writeByte(message)==
 ==available()==
