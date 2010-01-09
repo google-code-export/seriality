@@ -1,9 +1,8 @@
-#summary Example for Seriality & JQuery
+#summary How to use Seriality with JQuery
 
 = Introduction =
 
-Add your content here.
-
+This example demonstrates how to use Seriality and JQuery together. This example is also included in the Seriality installation package.
 
 == HTML/JS/JQuery/Seriality ==
 
