@@ -1,4 +1,4 @@
-#summary Control <div> with a potentiometer
+#summary Control a <div> with a potentiometer
 
 = Scale Example =
 
