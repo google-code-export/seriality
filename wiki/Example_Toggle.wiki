@@ -1,4 +1,4 @@
-#summary Example - How to toggle an LED with the browser
+#summary How to toggle an LED with the browser
 
 = Toggle Example =
 
