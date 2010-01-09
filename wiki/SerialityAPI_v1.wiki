@@ -65,7 +65,7 @@ if (serial.available()) {
 
 ==readJSON()==
 
-To help with protocol creation and to ease difficulties related to type conversion, JSON is also supported. The `readJSON()` function expects a sequence of characters beginning with a `{`. It does not return a value until an equal number of opening and closing braces are received. Any further validation is expected to be handled in Javascript. This function returns an empty string `""` on error.
+To help with protocol creation and to ease difficulties related to type conversion, support for JSON is also supported. The `readJSON()` function expects a sequence of characters beginning with a `{`. It does not return a value until an equal number of opening and closing braces are received. Any further validation is expected to be handled in Javascript. This function returns an empty string `""` on error.
 
 {{{
 var json;
