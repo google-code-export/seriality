@@ -1,0 +1,61 @@
+#summary One-sentence summary of this page.
+
+= Toggle Example =
+
+This example shows how to control an LED with the browser via radio buttons. This example is also included in the Seriality installation package.
+
+= HTML/JS/Seriality code for this example =
+
+{{{
+<html>
+<head>
+
+  <script type="text/javascript">
+  
+    var serial;
+  
+    function setup()
+    {
+      serial = (document.getElementById("seriality")).Seriality();
+      serial.begin(serial.ports[0], 9600);
+      serial.write('-');
+    }
+ 
+  </script>
+
+</head>
+<body onload="setup()">
+
+  <object type="application/Seriality" id="seriality" width="0" height="0"> </object>
+
+  <form>
+    ON <input type="radio" name="led" value="on" onclick="serial.write('!');"><br/>
+    OFF <input type="radio" name="led" value="off" onclick="serial.write('-');" checked="checked">
+  </form>
+
+</body>
+</html>
+}}}
+
+= Wiring/Arduino code for this example =
+
+{{{
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(13, OUTPUT);
+}
+
+void loop()
+{
+  char in;
+  if (Serial.available()) {
+    in = Serial.read();
+    if (in == '!') {
+      digitalWrite(13, HIGH);
+    } else {
+      digitalWrite(13, LOW);
+    }
+  }
+}
+}}}
