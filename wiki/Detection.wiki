@@ -1,4 +1,4 @@
-#summary Detecting Seriality
+#summary Plug-in Detection
 
 = Introduction =
 
