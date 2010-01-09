@@ -34,18 +34,25 @@ This example demonstrates how to read a JSON formatted string from a device usin
     {
       var json;
       var data;
+
       // if there are bytes to read
       if (serial.available()) {
+
         // read a JSON formatted string
         json = serial.readJSON();
+
         // transform JSON formatted string into an object
         data = eval('(' + json + ')');
+
         // if transformation was successful
         if (undefined != data) {
+
           // populate text fields with the data
           document.getElementById("knob").value = data.knob;
           document.getElementById("button").value = data.button;
+
         }
+
         // query for next reading
         serial.write(".");
       }
