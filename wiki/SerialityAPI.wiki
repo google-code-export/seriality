@@ -142,7 +142,7 @@ The `speed` property is a number that contains the speed of the port in use. Whe
 
 {{{
 if (serial.port) {
-  alert("Port in use: " + serial.port + " running at " + serial.speed + "bps");
+  alert("Port " + serial.port + " running at " + serial.speed + "bps");
 }
 }}}
 
