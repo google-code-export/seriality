@@ -158,5 +158,11 @@ alert("You have version " + serial.apiVersion + " of the Seriality API");
 
 ==API Release Dates==
 
-  * 1.0 - January 9th, 2010
-  * 1.1 - January 10th, 2010
+This is a listing of when each API version was incorporated in the downloadable release. This can help with the decision of whether or not to probe for the API version.
+
+  * 1.0
+    * Mac OS X - January 9th, 2010
+    * Windows - n/a
+  * 1.1
+    * Mac OS X - January 10th, 2010
+    * Windows - n/a
