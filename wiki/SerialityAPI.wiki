@@ -134,6 +134,9 @@ The `port` property is a string that contains the path to the port that is curre
 if (serial.port) {
   alert("Port in use: " + serial.port);
 }
+else {
+  alert("No port in use");  
+}
 }}}
 
 ==speed==
