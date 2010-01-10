@@ -144,9 +144,7 @@ else {
 The `speed` property is a number that contains the speed of the port in use. When no port is in use (eg. after a call to the end() function) `speed` contains 0. Available since API v1.1
 
 {{{
-if (serial.port) {
-  alert("Port " + serial.port + " running at " + serial.speed + "bps");
-}
+alert("Port " + serial.port + " running at " + serial.speed + "bps");
 }}}
 
 ==apiVersion==
