@@ -1,4 +1,4 @@
-#summary Plug-in Detection
+#summary Detecting the Seriality Plug-in
 
 = Introduction =
 
@@ -37,7 +37,7 @@ Some sample code to detect the Seriality browser plug-in is included below. This
   </script>
   
 </head>
-<body onload="setup()">
+<body onload="setup();">
 
   <object type="application/Seriality" id="seriality" width="0" height="0"></object>
 
