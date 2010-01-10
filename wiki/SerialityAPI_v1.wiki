@@ -12,7 +12,7 @@ The constructor must be called to create an instance of Seriality by which all o
 
 {{{
 var serial = (document.getElementById("seriality")).Seriality();
-...
+....
 <object type="application/Seriality" id="seriality" width="0" height="0"></object>
 }}}
 
