@@ -23,7 +23,7 @@ This example demonstrates how to read a JSON formatted string from a device usin
       // begin serial communications on the first known port at 9600 baud
       serial.begin(serial.ports[0], 9600);
 
-      // create infinite loop to process incoming data
+      // create periodic loop to process incoming data
       setInterval(loop, 125);
 
       // query for the first reading
