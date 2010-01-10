@@ -154,10 +154,6 @@ The `apiVersion` property is supplied to mitigate the painful process of plug-in
 alert("You have version " + serial.apiVersion + " of the Seriality API");
 }}}
 
-----
-
-==API Release Dates==
-
 This is a listing of when each API version was incorporated in the downloadable release. This can help with the decision of whether or not to probe for the API version.
 
   * 1.0
