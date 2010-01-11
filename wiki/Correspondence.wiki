@@ -32,7 +32,7 @@ void loop()
 
 = How it works =
 
-The `verifyPhysicalInterface()` javascript function (in the [http://zambetti.com/projects/seriality/examples/correspondence.html test page] and described below) issues a correspondence request and processes the resulting correspondence identifier received via the serial port.
+The `verifyPhysicalInterface()` javascript function (in the [http://zambetti.com/projects/seriality/examples/correspondence.html test page] and at the bottom of this page) issues a correspondence request and processes the resulting correspondence identifier received via the serial port.
 
 == Correspondence Request ==
 
