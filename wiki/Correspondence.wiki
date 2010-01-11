@@ -86,7 +86,7 @@ if (verifyPhysicalInterface(true) ) {
 
 Additionally, a `version` property is provided to allow for various releases of firmware that correspond to the same domain or path. This can be used to prompt users to update their firmware as needed.
 
-To enforce versioning, supply either an integer or floating-point number number as the second parameter of `verifyPhysicalInterface()`. It represents the _minimum_ version that will pass verification; for example, a correspondence identifier containing version 3.2 will pass verification when a web page specifies version 2.4.
+To enforce versioning, supply either an integer or floating-point number as the second parameter of `verifyPhysicalInterface()`. It represents the _minimum_ version that will pass verification; for example, a correspondence identifier containing version 3.2 will pass verification when a web page specifies version 2.4.
 
 Domain correspondence identifier with version property (Wiring/Arduino)
 {{{
