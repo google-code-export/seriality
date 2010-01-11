@@ -6,7 +6,7 @@ This is a method of verifying that a program resident on a microcontroller [http
 
 == Example ==
 
-The example [http://wiring.org.co/ Wiring]/[http://www.arduino.cc/ Arduino] code below corresponds to this [http://zambetti.com/projects/seriality/examples/correspondence.html test page]. Visit the page while a Wiring or Arduino board is connected and running the program provided below.
+The example Wiring]/Arduino code below corresponds to this [http://zambetti.com/projects/seriality/examples/correspondence.html test page]. Visit the page while a Wiring or Arduino board is connected and running the program provided below.
 
 === Wiring/Arduino ===
 
