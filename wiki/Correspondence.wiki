@@ -2,7 +2,7 @@
 
 = Correspondence =
 
-Knowing that a device is connected to your web page is not enough; when you design a physical interface for public distribution, you have to know that the device is connected to your web page is the device you intended.
+Knowing that a device is connected to your web page is not enough; when you design a physical interface for public distribution, you have to know that the device connected to your web page is the device you intended.
 
 The [http://en.wikipedia.org/wiki/Correspondence_(theology) correspondence] of a physical interface to a web page can be verified by asking the microcontroller which page it is intended to be connected to and comparing that information with what the web page knows about itself.
 
