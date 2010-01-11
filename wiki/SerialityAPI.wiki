@@ -1,6 +1,6 @@
 #summary Seriality API Documentation
 
-= Seriality API Documentation =
+= Seriality API =
 
 The Seriality API is modeled lightly off of the serial libraries included with [http://processing.org/reference/libraries/serial Processing] and [http://wiring.org.co/reference/libraries/Serial/index.html Wiring]/[http://arduino.cc/en/Reference/Serial Arduino] with some alterations to make it friendlier for Javascript. This documentation covers the first version of the Seriality API (see the `apiVersion` property).
 
