@@ -6,7 +6,7 @@ This is a method of verifying that a program resident on a microcontroller [http
 
 == Example ==
 
-The example Wiring/Arduino code below corresponds to this [http://zambetti.com/projects/seriality/examples/correspondence.html test page]. Visit the page while a Wiring or Arduino board is connected and running the program provided below.
+The example [http://wiring.org.co/ Wiring]/[http://www.arduino.cc/ Arduino] code below corresponds to this [http://zambetti.com/projects/seriality/examples/correspondence.html test page]. Visit the page while a Wiring or Arduino board is connected and running the program provided below.
 
 === Wiring/Arduino ===
 
@@ -50,12 +50,12 @@ For a physical interface to be verified as corresponding to a web page, the corr
 
 The `domain` property states which web domain the physical interface corresponds to. It can also contain subdomains (eg: foo.example.com) to be more targeted. The `domain` property is the only required property of a correspondence identifier.
 
-Domain correspondence identifier (supplied by device)
+Domain correspondence identifier (Wiring/Arduino)
 {{{
-{'domain':'example.com'}
+Serial.print("{'domain':'example.com'}");
 }}}
 
-How to verify a physical interface for domain correspondence (javascript)
+How to verify a physical interface for domain correspondence (Javascript)
 {{{
 if (verifyPhysicalInterface() ) {
   alert("Correct physical interface for this domain");
@@ -66,12 +66,12 @@ if (verifyPhysicalInterface() ) {
 
 The `path` property states which path the physical interface corresponds to in the given domain. It can contain paths to directories or specific pages.
 
-Path correspondence identifier (supplied by device)
+Path correspondence identifier (Wiring/Arduino)
 {{{
-{'domain':'example.com','path':'/path/to/page.html'}
+Serial.print("{'domain':'example.com','path':'/path/to/page.html'}");
 }}}
 
-How to verify a physical interface for path correspondence (javascript)
+How to verify a physical interface for path correspondence (Javascript)
 {{{
 // enable strict mode for path correspondence
 if (verifyPhysicalInterface(true) ) {
@@ -85,23 +85,30 @@ Additionally, a `version` property is provided to allow for various releases of 
 
 Domain correspondence identifier with version property (supplied by device)
 {{{
-{'domain':'example.com','version':1}
+Serial.print("{'domain':'example.com','version':1}");
 }}}
 
 Path correspondence identifier with version property (supplied by device)
 {{{
-{'domain':'example.com','path':'/path/to/page.html','version':1}
+Serial.print("{'domain':'example.com','path':'/path/to/page.html','version':1}");
 }}}
 
 How to invoke the verification function to enforce versioning (javascript)
 {{{
-verifyPhysicalInterface(false, 1) // domain correspondence
-verifyPhysicalInterface(true, 1) // path correspondence
+// domain correspondence with version check
+if (verifyPhysicalInterface(false, 1) ) {
+  alert("Correct physical interface for this domain");
+}
+
+// path correspondence with version check
+if (verifyPhysicalInterface(true, 1) ) {
+  alert("Correct physical interface for this path");
+}
 }}}
 
-== Example ==
+== Usage ==
 
-The example Wiring/Arduino code below corresponds to this [http://zambetti.com/projects/seriality/examples/correspondence.html test page]. Visit the page while a Wiring or Arduino board is connected and running the program provided below.
+Here is the source code of the [http://zambetti.com/projects/seriality/examples/correspondence.html test page]. Visit the test page while a Wiring or Arduino board is connected and running the program provided at the top of this page.
 
 === HTML/JS/Seriality ===
 
