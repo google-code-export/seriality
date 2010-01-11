@@ -2,7 +2,7 @@
 
 = Toggle Example =
 
-This example demonstrates how to write to a device using Seriality to control an LED via radio buttons. This example is also included in the Seriality installation package.
+This example demonstrates how to write to a device using Seriality to control an LED via radio buttons. This example is also available in the Seriality installation package and [http://zambetti.com/projects/seriality/examples/pong.html online].
 
 == HTML/JS/Seriality ==
 
