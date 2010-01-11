@@ -8,7 +8,7 @@ The Seriality API is modeled lightly off of the serial libraries included with [
 
 ==Seriality()==
 
-The constructor must be called to create an instance of Seriality by which all other functions can be called. This is done by referencing the DOM element which contains the plug-in object. The constructor expects no parameters. Available since API v1.0
+The constructor must be called to create an instance of Seriality by which all other functions can be called. This is done by referencing the DOM element which contains the plug-in object. The constructor expects no parameters. <font color="#cccccc">Available since API v1.0</font>
 
 {{{
 var serial = (document.getElementById("seriality")).Seriality();
