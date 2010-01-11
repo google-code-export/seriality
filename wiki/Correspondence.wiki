@@ -2,7 +2,33 @@
 
 = Correspondence =
 
-This method of verifying that a program resident on a microcontroller [http://en.wikipedia.org/wiki/Correspondence_(theology) corresponds] to a particular web page is offered as a proposal. You can try this example by visiting this [http://zambetti.com/projects/seriality/examples/correspondence.html test page] while a Wiring or Arduino board is connected and running the program provided below.
+Here we describe a method of verifying that a program resident on a microcontroller [http://en.wikipedia.org/wiki/Correspondence_(theology) corresponds] to a particular web page. There is a working example of this technique included at the bottom of this page.
+
+== Example ==
+
+The example Wiring/Arduino code below corresponds to this [http://zambetti.com/projects/seriality/examples/correspondence.html test page]. Visit the page while a Wiring or Arduino board is connected and running the program provided below.
+
+=== Wiring/Arduino ===
+
+{{{
+void setup()
+{
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  char in;
+  if (Serial.available()) {
+    in = Serial.read();
+    // process correspondence request
+    if (in == '@') {
+      // reply with correspondence identifier
+      Serial.print("{'domain':'zambetti.com'}");
+    }
+  }
+}
+}}}
 
 == Correspondence Request ==
 
@@ -70,6 +96,8 @@ verifyPhysicalInterface(true, 1) // path correspondence
 }}}
 
 == Example ==
+
+The example Wiring/Arduino code below corresponds to this [http://zambetti.com/projects/seriality/examples/correspondence.html test page]. Visit the page while a Wiring or Arduino board is connected and running the program provided below.
 
 === HTML/JS/Seriality ===
 
@@ -163,26 +191,4 @@ verifyPhysicalInterface(true, 1) // path correspondence
 
 </body>
 </html>
-}}}
-
-=== Wiring/Arduino ===
-
-{{{
-void setup()
-{
-  Serial.begin(9600);
-}
-
-void loop()
-{
-  char in;
-  if (Serial.available()) {
-    in = Serial.read();
-    // process correspondence request
-    if (in == '@') {
-      // reply with correspondence identifier
-      Serial.print("{'domain':'zambetti.com'}");
-    }
-  }
-}
 }}}
