@@ -1,10 +1,15 @@
-#summary Verify that a physical interface corresponds to a Web page
+#summary Determine if a physical interface corresponds to a Web page
 
 = Correspondence =
 
 A method of verifying that a program resident on a microcontroller [http://en.wikipedia.org/wiki/Correspondence_(theology) corresponds] to a particular web page is offered as an example. 
 
-= Details =
+== HTML/JS/Seriality ==
+
+{{{
+}}}
+
+== Wiring/Arduino ==
 
 {{{
 void setup()
@@ -18,7 +23,7 @@ void loop()
   if (Serial.available()) {
     in = Serial.read();
     if (in == '@') {
-      Serial.print("{'host':'zambetti.com','path':'/projects/seriality/examples/relation.html','version':15}");
+      Serial.print("{'host':'zambetti.com','path':'/projects/seriality/examples/correspondence.html','version':1}");
     }
   }
 }
