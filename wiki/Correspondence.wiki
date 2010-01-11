@@ -11,57 +11,78 @@ A method of verifying that a program resident on a microcontroller [http://en.wi
 <head>
 
   <script type="text/javascript">
-  
+
+    // create global reference
     var serial;
   
     function setup()
     {
+      // instantiate seriality
       serial = (document.getElementById("seriality")).Seriality();
+
+      // begin serial communications on first known serial port at 9600 baud, bail on failure
       if (!serial.begin(serial.ports[0], 9600)) {
         document.write("No physical interface");
         return;
       }
+
+      // verify that the physical interface corresponds to this web page, bail on failure
+      // also try... (see Wiring/Arduino example below)
+      // verifyPhysicalInterface(false) - for domain-wide physical interfaces
+      // verifyPhysicalInterface(true, 1) - to check for physical interface versioning
+      //
       if (!verifyPhysicalInterface()) {
         document.write("Incorrect physical interface");
         serial.end();
         return;
       }
+
+      // physical interface corresponds to this web page
       document.write("Correct physical interface");
     }
     
+    // utility function to request and parse the correspondence identifier
     function verifyPhysicalInterface(strict, version)
     {
+      // request the correspondence identifier
       serial.write("@");
-      var relation;
+
+      // allow time for the response (100ms)
       var now = new Date();
       var then = new Date();
       while (now - then < 100) {
         now = new Date();
       }
+
+      // optional parameter for physical interface versioning
       if (undefined === version) {
         version = 0;
       }
+
+      // optional parameter to allow domain-wide physical interfaces by disabling strict mode
       if (undefined === strict) {
         strict = true;
       }
+
+      // parse correspondence identifier
       if (serial.available()) {
-        relation = eval('(' + serial.readJSON() + ')');
-        if (undefined === relation) {
+        var identifier = eval('(' + serial.readJSON() + ')');
+        if (undefined === identifier) {
           return false;
         }
         if (version > 0) {
-          if (undefined === relation.version) {
+          if (undefined === identifier.version) {
             return false;
           }
-          if (relation.version < version) {
+          if (identifier.version < version) {
             return false;
           }
         }
-        if (-1 == location.host.indexOf(relation.host)) {
+        if (-1 == location.host.indexOf(identifier.host)) {
           return false;
         }
         if (strict) {
-          if (0 != location.pathname.indexOf(relation.path)) {
+          if (0 != location.pathname.indexOf(identifier.path)) {
             return false;
           }
         }
@@ -94,7 +115,17 @@ void loop()
   char in;
   if (Serial.available()) {
     in = Serial.read();
-    if (in == '@') {
+
+    // process correspondence request
+    if (in == '@')
+    {
+      // reply with domain-wide correspondence identifier
+      // Serial.print("{'host':'zambetti.com'}");
+
+      // reply with page-specific correspondence identifier
+      // Serial.print("{'host':'zambetti.com','path':'/projects/seriality/examples/correspondence.html'}");
+
+      // reply with page-specific correspondence identifier with physical interface version
       Serial.print("{'host':'zambetti.com','path':'/projects/seriality/examples/correspondence.html','version':1}");
     }
   }
