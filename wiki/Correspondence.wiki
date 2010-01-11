@@ -92,6 +92,11 @@ A method of verifying that a program resident on a microcontroller [http://en.wi
 </head>
 <body onload="setup();">
 
+  <h2>Correspondence Example</h2>
+  <p>Determine if a physical interface corresponds to a Web page</p>
+  <p>Reload this page to test</p>
+  <p><a href="http://code.google.com/p/seriality/wiki/Correspondence">View documentation</a></p>
+
   <object type="application/Seriality" id="seriality" width="0" height="0"></object>
 
 </body>
