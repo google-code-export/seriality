@@ -2,7 +2,7 @@
 
 = Correspondence =
 
-Here we describe a method of verifying that a program resident on a microcontroller [http://en.wikipedia.org/wiki/Correspondence_(theology) corresponds] to a particular web page. There is a working example of this technique included at the bottom of this page.
+This is a method of verifying that a program resident on a microcontroller [http://en.wikipedia.org/wiki/Correspondence_(theology) corresponds] to a particular web page.
 
 == Example ==
 
@@ -29,6 +29,10 @@ void loop()
   }
 }
 }}}
+
+= How it works =
+
+The `verifyPhysicalInterface()` javascript function (in the [http://zambetti.com/projects/seriality/examples/correspondence.html test page] and described below) issues a correspondence request and processes the resulting correspondence identifier received via the serial port.
 
 == Correspondence Request ==
 
