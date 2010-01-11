@@ -24,7 +24,7 @@ void loop()
     // process correspondence request
     if (in == '@') {
       // reply with correspondence identifier
-      Serial.print("{'domain':'zambetti.com'}");
+      Serial.print("{'domain':'zambetti.com','path':'/projects/seriality/examples/correspondence.html'}");
     }
   }
 }
