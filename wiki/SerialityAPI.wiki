@@ -22,6 +22,8 @@ The `begin()` function attempts to begin serial communications on the specified 
 
 {{{
 serial.begin("/dev/tty.usbserial-A9082r0E", 9600);
+or
+serial.begin("/dev/tty.usbserial-A9082r0E");
 }}}
 
 ==end()==
