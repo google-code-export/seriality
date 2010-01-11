@@ -1,4 +1,4 @@
-#summary Seriality API Documentationj
+#summary Seriality API Documentation
 
 = Seriality API =
 
