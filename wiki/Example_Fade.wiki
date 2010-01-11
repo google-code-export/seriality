@@ -1,6 +1,6 @@
 #summary How to fade an LED with a slider
 
-= Introduction =
+= Fade Example =
 
 This example demonstrates how to use Seriality and JQuery together. This example is also included in the Seriality installation package.
 
