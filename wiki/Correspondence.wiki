@@ -48,7 +48,7 @@ For a physical interface to be verified as corresponding to a web page, the corr
 
 === domain ===
 
-The `domain` property states which web domain the physical interface corresponds to. It can also contain subdomains (eg: foo.example.com) to be more targeted. The `domain` property is the only required property of a correspondence identifier.
+The `domain` property states which web domain the physical interface corresponds to. It can also contain subdomains (eg: www.example.com vs. example.com) to be targeted more specifically. The `domain` property is the only required property of a correspondence identifier.
 
 Domain correspondence identifier (Wiring/Arduino)
 {{{
