@@ -4,6 +4,71 @@
 
 This method of verifying that a program resident on a microcontroller [http://en.wikipedia.org/wiki/Correspondence_(theology) corresponds] to a particular web page is offered as a proposal. You can try this example by visiting this [http://zambetti.com/projects/seriality/examples/correspondence.html test page] while a Wiring or Arduino board is connected and running the program provided below.
 
+== Correspondence Request ==
+
+The '@' character is used to request the correspondence identifier from an attached serial device. A JSON-formatted correspondence identifier is expected in return.
+
+== Correspondence Identifiers ==
+
+There are two types of correspondence
+  * *Path correspondence* for path-specific physical interfaces
+  * *Domain correspondence* for domain-wide physical interfaces
+
+For a physical interface to be verified as corresponding to a web page, the correspondence identifier returned after a correspondence request must match what is expected by the page.
+
+=== domain ===
+
+The `domain` property states which web domain the physical interface corresponds to. It can also contain subdomains (eg: foo.example.com) to be more targeted. The `domain` property is the only required property of a correspondence identifier.
+
+Domain correspondence identifier (supplied by device)
+{{{
+{'domain':'example.com'}
+}}}
+
+How to verify a physical interface for domain correspondence (javascript)
+{{{
+if (verifyPhysicalInterface() ) {
+  alert("Correct physical interface for this domain");
+}
+}}}
+
+=== path ===
+
+The `path` property states which path the physical interface corresponds to in the given domain. It can contain paths to directories or specific pages.
+
+Path correspondence identifier (supplied by device)
+{{{
+{'domain':'example.com','path':'/path/to/page.html'}
+}}}
+
+How to verify a physical interface for path correspondence (javascript)
+{{{
+// enable strict mode for path correspondence
+if (verifyPhysicalInterface(true) ) {
+  alert("Correct physical interface for this path");
+}
+}}}
+
+=== version ===
+
+Additionally, a `version` property is provided to allow for various releases of firmware that correspond to the same domain or path. This can be used to prompt users to update their firmware as needed.
+
+Domain correspondence identifier with version property (supplied by device)
+{{{
+{'domain':'example.com','version':1}
+}}}
+
+Path correspondence identifier with version property (supplied by device)
+{{{
+{'domain':'example.com','path':'/path/to/page.html','version':1}
+}}}
+
+How to invoke the verification function to enforce versioning (javascript)
+{{{
+verifyPhysicalInterface(false, 1) // domain correspondence
+verifyPhysicalInterface(true, 1) // path correspondence
+}}}
+
 == Example ==
 
 === HTML/JS/Seriality ===
@@ -120,69 +185,4 @@ void loop()
     }
   }
 }
-}}}
-
-== Correspondence Request ==
-
-The '@' character is used to request the correspondence identifier from an attached serial device. A JSON-formatted correspondence identifier is expected in return.
-
-== Correspondence Identifiers ==
-
-There are two types of correspondence
-  * *Path correspondence* for path-specific physical interfaces
-  * *Domain correspondence* for domain-wide physical interfaces
-
-For a physical interface to be verified as corresponding to a web page, the correspondence identifier returned after a correspondence request must match what is expected by the page.
-
-=== domain ===
-
-The `domain` property states which web domain the physical interface corresponds to. It can also contain subdomains (eg: foo.example.com) to be more targeted. The `domain` property is the only required property of a correspondence identifier.
-
-Domain correspondence identifier (supplied by device)
-{{{
-{'domain':'example.com'}
-}}}
-
-How to verify a physical interface for domain correspondence (javascript)
-{{{
-if (verifyPhysicalInterface() ) {
-  alert("Correct physical interface for this domain");
-}
-}}}
-
-=== path ===
-
-The `path` property states which path the physical interface corresponds to in the given domain. It can contain paths to directories or specific pages.
-
-Path correspondence identifier (supplied by device)
-{{{
-{'domain':'example.com','path':'/path/to/page.html'}
-}}}
-
-How to verify a physical interface for path correspondence (javascript)
-{{{
-// enable strict mode for path correspondence
-if (verifyPhysicalInterface(true) ) {
-  alert("Correct physical interface for this path");
-}
-}}}
-
-=== version ===
-
-Additionally, a `version` property is provided to allow for various releases of firmware that correspond to the same domain or path. This can be used to prompt users to update their firmware as needed.
-
-Domain correspondence identifier with version property (supplied by device)
-{{{
-{'domain':'example.com','version':1}
-}}}
-
-Path correspondence identifier with version property (supplied by device)
-{{{
-{'domain':'example.com','path':'/path/to/page.html','version':1}
-}}}
-
-How to invoke the verification function to enforce versioning (javascript)
-{{{
-verifyPhysicalInterface(false, 1) // domain correspondence
-verifyPhysicalInterface(true, 1) // path correspondence
 }}}
