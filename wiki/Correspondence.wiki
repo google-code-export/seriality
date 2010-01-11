@@ -64,7 +64,7 @@ if (verifyPhysicalInterface() ) {
 
 === path ===
 
-The `path` property states which path the physical interface corresponds to in the given domain. It can contain paths to directories or specific pages (eg: '/path/to' vs. '/path/to/page.html').
+The `path` property states which path the physical interface corresponds to in the given domain. It can contain paths to directories or specific pages (eg: '/path/to/' vs. '/path/to/page.html').
 
 Path correspondence identifier (Wiring/Arduino)
 {{{
