@@ -73,7 +73,6 @@ Serial.print("{'domain':'example.com','path':'/path/to/page.html'}");
 
 How to verify a physical interface for path correspondence (Javascript)
 {{{
-// strict mode for path correspondence
 if (verifyPhysicalInterface(true) ) {
   alert("Correct physical interface for this path");
 }
