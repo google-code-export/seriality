@@ -16,7 +16,7 @@ Some sample code to detect the Seriality browser plug-in is included below. This
     {
       if (hasSeriality()) {
         serial = (document.getElementById("seriality")).Seriality();
-        alert("You have Seriality" + "\n\n" + serial.ports);
+        alert("You have Seriality" + "\n" + serial.ports);
       } else {
         alert("You do not have Seriality");
       }
