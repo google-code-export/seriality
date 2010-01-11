@@ -74,11 +74,11 @@ This method of verifying that a program resident on a microcontroller [http://en
             return false;
           }
         }
-        if (-1 == location.host.indexOf(identifier.host)) {
+        if (-1 == location.host.indexOf(identifier.domain)) {
           return false;
         }
         if (strict) {
-          if (0 != location.pathname.indexOf(identifier.path)) {
+          if (0 != location.pathname.indexOf(identifier.page)) {
             return false;
           }
         }
@@ -114,8 +114,41 @@ void loop()
     // process correspondence request
     if (in == '@') {
       // reply with correspondence identifier
-      Serial.print("{'host':'zambetti.com','path':'/projects/seriality/examples/correspondence.html'}");
+      Serial.print("{'domain':'zambetti.com','page':'/projects/seriality/examples/correspondence.html'}");
     }
   }
 }
+}}}
+
+= Correspondence Request =
+
+The '@' character is used to request the correspondence identifier from an attached serial device. A JSON-formatted correspondence identifier is expected in return.
+
+= Correspondence Identifiers =
+
+There are two types of correspondence
+  * Page correspondence - for page-specific physical interfaces
+  * Domain correspondence - for domain-wide physical interfaces
+
+For a physical interface to be verified as corresponding to a Web page, the correspondence identifier returned after a correspondence request must match what is expected by the page itself. Simply put, the parameters supplied when calling verifyPhysicalInterface() must match the content of the correspondence identifier received.
+
+== domain ==
+
+
+
+== page ==
+
+== version ==
+
+Additionally, a version property is provided to allow for various releases of firmware that correspond to the same page or domain. This can be used to prompt users to update their firmware as needed.
+
+Correspondence identifier with version property
+{{{
+{'domain':'zambetti.com','page':'/projects/seriality/examples/correspondence.html','version':1}
+}}}
+
+How to invoke the verification function to enforce versioning
+{{{
+verifyPhysicalInterface(true, 1) // page correspondence
+verifyPhysicalInterface(false, 1) // domain correspondence
 }}}
