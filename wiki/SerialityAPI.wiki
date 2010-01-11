@@ -18,7 +18,7 @@ var serial = (document.getElementById("seriality")).Seriality();
 
 ==begin(port, speed)==
 
-The `begin()` function attempts to begin serial communications on the specified port at the specified speed. Valid ports are held in the `ports` array. Valid speeds are `1200`, `1800`, `2400`, `4800`, `9600`, `19200`, `38400`, `57600`, `115200`, and `230400`. When any other number is provided, the speed will default to `9600`. A boolean `true` is returned when the port was opened successfully; a boolean `false` is returned otherwise. As of API v1.1 the speed parameter is optional, defaulting to `9600`. Available since API v1.0
+The `begin()` function attempts to begin serial communications on the specified port at the specified speed. Valid ports are held in the `ports` array. Valid speeds are `1200`, `1800`, `2400`, `4800`, `9600`, `19200`, `38400`, `57600`, `115200`, and `230400`. When any other number is provided, the speed will default to `9600`. A boolean `true` is returned when the port was opened successfully; a boolean `false` is returned otherwise. As of API v1.1 the `speed` parameter is optional, defaulting to `9600`. Available since API v1.0
 
 {{{
 serial.begin("/dev/tty.usbserial-A9082r0E", 9600);
