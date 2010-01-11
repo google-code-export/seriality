@@ -68,7 +68,7 @@ if (verifyPhysicalInterface() ) {
 
 === path ===
 
-The `path` property states which path the physical interface corresponds to in the given domain. It can contain a path to a directory or specific page (eg: `/path/to/` vs. `/path/to/page.html`). For path correspondence, `verifyPhysicalInterface()` must be called with parameter `true` to enable strict mode (eg: `verifyPhysicalInterface(true)`),
+The `path` property states which path the physical interface corresponds to in the given domain. It can contain a path to a directory or a specific page (eg: `/path/to/` vs. `/path/to/page.html`). For path correspondence, `verifyPhysicalInterface()` must be called with parameter `true` to enable strict mode (eg: `verifyPhysicalInterface(true)`),
 
 Path correspondence identifier (Wiring/Arduino)
 {{{
