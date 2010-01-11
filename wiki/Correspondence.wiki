@@ -111,7 +111,7 @@ if (verifyPhysicalInterface(true, 1) ) {
 
 == Usage ==
 
-Here is the source code of the [http://zambetti.com/projects/seriality/examples/correspondence.html test page]. Visit the test page while a Wiring or Arduino board is connected and running the program provided at the top of this page.
+This is a simplified example of how to verify that a physical interface corresponds to a web page. To use this example, you will need to upload the web page below to your server and modify the Wiring/Arduino program at the top of this page to provide a matching correspondence identifier.
 
 === HTML/JS/Seriality ===
 
@@ -129,14 +129,14 @@ Here is the source code of the [http://zambetti.com/projects/seriality/examples/
       // instantiate seriality
       serial = (document.getElementById("seriality")).Seriality();
 
-      // begin serial communications on first known serial port at 9600 baud, bail on failure
+      // begin serial communications on first known serial port at 9600 baud, handle failure
       if (!serial.begin(serial.ports[0], 9600)) {
         alert("No physical interface");
         return;
       }
 
-      // verify that the physical interface corresponds to this web page, bail on failure
-      if (!verifyPhysicalInterface()) {
+      // verify that the physical interface corresponds to this web page, handle failure
+      if (!verifyPhysicalInterface(true)) {
         alert("Incorrect physical interface");
         serial.end();
         return;
