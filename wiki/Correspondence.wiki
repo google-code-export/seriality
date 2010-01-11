@@ -1,4 +1,4 @@
-#summary Determine if a physical interface corresponds to a Web page
+#summary Determine if a physical interface corresponds to a web page
 
 = Correspondence =
 
@@ -132,11 +132,11 @@ There are two types of correspondence
   * *Path correspondence* for path-specific physical interfaces
   * *Domain correspondence* for domain-wide physical interfaces
 
-For a physical interface to be verified as corresponding to a Web page, the correspondence identifier returned after a correspondence request must match what is expected by the page.
+For a physical interface to be verified as corresponding to a web page, the correspondence identifier returned after a correspondence request must match what is expected by the page.
 
 === domain ===
 
-The `domain` property states which Web domain the physical interface corresponds to. It can also contain subdomains (eg: foo.example.com) to be more targeted. The `domain` property is the only required property of a correspondence identifier.
+The `domain` property states which web domain the physical interface corresponds to. It can also contain subdomains (eg: foo.example.com) to be more targeted. The `domain` property is the only required property of a correspondence identifier.
 
 Domain correspondence identifier (supplied by device)
 {{{
