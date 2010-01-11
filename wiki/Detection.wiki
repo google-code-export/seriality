@@ -1,4 +1,4 @@
-#summary Detecting the Seriality Plug-in
+#summary How to detect the Seriality Plug-in
 
 = Detecting Seriality =
 
