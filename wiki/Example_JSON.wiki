@@ -2,7 +2,7 @@
 
 = JSON Example =
 
-This example demonstrates how to read a JSON formatted string from a device using Seriality. It uses a query technique, querying the device for the latest reading. This technique offers a noticeable performance advantage and is lightweight enough to allow the page to perform other Javascript intensive tasks in an interleaved/controllable fashion. This example is also included in the Seriality installation package.
+This example demonstrates how to read a JSON formatted string from a device using Seriality. It uses a query technique, querying the device for the latest reading. This technique offers a noticeable performance advantage and is lightweight enough to allow the page to perform other Javascript intensive tasks in an interleaved/controllable fashion. This example is also available in the Seriality installation package and [http://zambetti.com/projects/seriality/examples/json.html online].
 
 == HTML/JS/Seriality ==
 
