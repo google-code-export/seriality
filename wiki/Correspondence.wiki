@@ -27,10 +27,6 @@ A method of verifying that a program resident on a microcontroller [http://en.wi
       }
 
       // verify that the physical interface corresponds to this web page, bail on failure
-      // also try... (see Wiring/Arduino example below)
-      // verifyPhysicalInterface(false) - for domain-wide physical interfaces
-      // verifyPhysicalInterface(true, 1) - to check for physical interface versioning
-      //
       if (!verifyPhysicalInterface()) {
         document.write("Incorrect physical interface");
         serial.end();
@@ -115,18 +111,10 @@ void loop()
   char in;
   if (Serial.available()) {
     in = Serial.read();
-
     // process correspondence request
-    if (in == '@')
-    {
-      // reply with domain-wide correspondence identifier
-      // Serial.print("{'host':'zambetti.com'}");
-
-      // reply with page-specific correspondence identifier
-      // Serial.print("{'host':'zambetti.com','path':'/projects/seriality/examples/correspondence.html'}");
-
-      // reply with page-specific correspondence identifier with physical interface version
-      Serial.print("{'host':'zambetti.com','path':'/projects/seriality/examples/correspondence.html','version':1}");
+    if (in == '@') {
+      // reply with correspondence identifier
+      Serial.print("{'host':'zambetti.com','path':'/projects/seriality/examples/correspondence.html'}");
     }
   }
 }
