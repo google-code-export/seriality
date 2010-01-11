@@ -100,12 +100,10 @@ Serial.print("{'domain':'example.com','path':'/path/to/page.html','version':1}")
 
 How to verify a physical interface with versioning (Javascript)
 {{{
-// domain correspondence with versioning
 if (verifyPhysicalInterface(false, 1) ) {
   alert("Correct physical interface for this domain");
 }
 
-// path correspondence with versioning
 if (verifyPhysicalInterface(true, 1) ) {
   alert("Correct physical interface for this path");
 }
