@@ -22,19 +22,19 @@ A method of verifying that a program resident on a microcontroller [http://en.wi
 
       // begin serial communications on first known serial port at 9600 baud, bail on failure
       if (!serial.begin(serial.ports[0], 9600)) {
-        document.write("No physical interface");
+        alert("No physical interface");
         return;
       }
 
       // verify that the physical interface corresponds to this web page, bail on failure
       if (!verifyPhysicalInterface()) {
-        document.write("Incorrect physical interface");
+        alert("Incorrect physical interface");
         serial.end();
         return;
       }
 
       // physical interface corresponds to this web page
-      document.write("Correct physical interface");
+      alert("Correct physical interface");
     }
     
     // utility function to request and parse the correspondence identifier
