@@ -2,7 +2,7 @@
 
 = Fade Example =
 
-This example demonstrates how to use Seriality and JQuery together. This example is also included in the Seriality installation package. You can [http://zambetti.com/projects/seriality/examples/fade.html try this example] online.
+This example demonstrates how to use Seriality and JQuery together. This example is also included in the Seriality installation package. [http://zambetti.com/projects/seriality/examples/fade.html This example] is available online.
 
 == HTML/JS/JQuery/Seriality ==
 
