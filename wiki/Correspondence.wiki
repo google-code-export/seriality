@@ -111,7 +111,7 @@ if (verifyPhysicalInterface(true, 1) ) {
 
 == Usage ==
 
-This is a simplified example of how to verify that a physical interface corresponds to a web page. To use this example, you will need to upload the web page below to your server and modify the Wiring/Arduino program at the top of this page to provide a matching correspondence identifier.
+This is a simplified example of how to verify that a physical interface corresponds to a web page. To use this example, you will need to upload the web page below to your server and modify the Wiring/Arduino program at the top of this page to provide a matching correspondence identifier. For a more robust deployment, consider adding [Detection plug-in detection].
 
 === HTML/JS/Seriality ===
 
