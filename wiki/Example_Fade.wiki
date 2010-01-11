@@ -1,4 +1,4 @@
-#summary How to fade an LED with a slider
+#summary How to fade an LED with a slider using JQuery
 
 = Fade Example =
 
