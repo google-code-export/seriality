@@ -1,4 +1,4 @@
-#summary How to determine if a physical interface corresponds to a web page
+#summary Determining if a physical interface corresponds to a web page
 
 = Correspondence =
 
