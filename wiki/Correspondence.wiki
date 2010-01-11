@@ -18,15 +18,15 @@ A method of verifying that a program resident on a microcontroller [http://en.wi
     {
       serial = (document.getElementById("seriality")).Seriality();
       if (!serial.begin(serial.ports[0], 9600)) {
-        alert("No physical interface connected");
+        alert("No physical interface");
         return;
       }
       if (!verifyPhysicalInterface()) {
-        alert("Incorrect physical interface connected");
+        alert("Incorrect physical interface");
         serial.end();
         return;
       }
-      alert("Correct physical interface is connected");
+      alert("Correct physical interface");
     }
     
     function verifyPhysicalInterface(strict, version)
