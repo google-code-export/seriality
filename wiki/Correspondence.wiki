@@ -83,17 +83,17 @@ if (verifyPhysicalInterface(true) ) {
 
 Additionally, a `version` property is provided to allow for various releases of firmware that correspond to the same domain or path. This can be used to prompt users to update their firmware as needed.
 
-Domain correspondence identifier with version property (supplied by device)
+Domain correspondence identifier with version property (Wiring/Arduino)
 {{{
 Serial.print("{'domain':'example.com','version':1}");
 }}}
 
-Path correspondence identifier with version property (supplied by device)
+Path correspondence identifier with version property (Wiring/Arduino)
 {{{
 Serial.print("{'domain':'example.com','path':'/path/to/page.html','version':1}");
 }}}
 
-How to invoke the verification function to enforce versioning (javascript)
+How to invoke the verification function to enforce versioning (Javascript)
 {{{
 // domain correspondence with version check
 if (verifyPhysicalInterface(false, 1) ) {
