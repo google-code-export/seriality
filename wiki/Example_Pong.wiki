@@ -2,7 +2,7 @@
 
 = Pong Example =
 
-This example demonstrates how to use Seriality with [http://processingjs.org/ Processing.js].
+This example demonstrates how to use Seriality with [http://processingjs.org/ Processing.js]. You can [http://zambetti.com/projects/seriality/examples/pong.html try this example] online.
 
 == HTML/JS/Seriality ==
 
