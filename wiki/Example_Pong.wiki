@@ -30,6 +30,7 @@ This example demonstrates how to use Seriality with [http://processingjs.org/ Pr
   {
     // set up stage and drawing modes
     size(500, 300);
+    fill(255);
     noStroke();
     rectMode(CENTER);
 
