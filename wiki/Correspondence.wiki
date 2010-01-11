@@ -7,6 +7,78 @@ A method of verifying that a program resident on a microcontroller [http://en.wi
 == HTML/JS/Seriality ==
 
 {{{
+<html>
+<head>
+
+  <script type="text/javascript">
+  
+    var serial;
+  
+    function setup()
+    {
+      serial = (document.getElementById("seriality")).Seriality();
+      if (!serial.begin(serial.ports[0], 9600)) {
+        alert("No physical interface connected");
+        return;
+      }
+      if (!verifyPhysicalInterface()) {
+        alert("Incorrect physical interface connected");
+        serial.end();
+        return;
+      }
+      alert("Correct physical interface is connected");
+    }
+    
+    function verifyPhysicalInterface(strict, version)
+    {
+      serial.write("@");
+      var relation;
+      var now = new Date();
+      var then = new Date();
+      while (now - then < 100) {
+        now = new Date();
+      }
+      if (undefined === version) {
+        version = 0;
+      }
+      if (undefined === strict) {
+        strict = true;
+      }
+      if (serial.available()) {
+        relation = eval('(' + serial.readJSON() + ')');
+        if (undefined === relation) {
+          return false;
+        }
+        if (version > 0) {
+          if (undefined === relation.version) {
+            return false;
+          }
+          if (relation.version < version) {
+            return false;
+          }
+        }
+        if (-1 == location.host.indexOf(relation.host)) {
+          return false;
+        }
+        if (strict) {
+          if (0 != location.pathname.indexOf(relation.path)) {
+            return false;
+          }
+        }
+        return true;
+      }
+      return false;
+    }
+
+  </script>
+
+</head>
+<body onload="setup();">
+
+  <object type="application/Seriality" id="seriality" width="0" height="0"></object>
+
+</body>
+</html>
 }}}
 
 == Wiring/Arduino ==
