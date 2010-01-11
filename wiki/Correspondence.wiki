@@ -2,7 +2,7 @@
 
 = Correspondence =
 
-A method of verifying that a program resident on a microcontroller [http://en.wikipedia.org/wiki/Correspondence_(theology) corresponds] to a particular web page is offered as an example. 
+A method of verifying that a program resident on a microcontroller [http://en.wikipedia.org/wiki/Correspondence_(theology) corresponds] to a particular web page is offered as a point of discussion. 
 
 == HTML/JS/Seriality ==
 
