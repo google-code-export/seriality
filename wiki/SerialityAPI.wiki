@@ -16,7 +16,7 @@ var serial = (document.getElementById("seriality")).Seriality();
 <object type="application/Seriality" id="seriality" width="0" height="0"></object>
 }}}
 
-==begin(port, _speed_)==
+==begin(port, speed)==
 
 The `begin()` function attempts to begin serial communications on the specified port at the specified speed. Valid ports are held in the `ports` array. Valid speeds are `1200`, `1800`, `2400`, `4800`, `9600`, `19200`, `38400`, `57600`, `115200`, and `230400`. When any other number is provided, the speed will default to `9600`. A boolean `true` is returned when the port was opened successfully; a boolean `false` is returned otherwise. <font color="#999999">As of API v1.1 the `speed` parameter is optional with a default value of `9600`. Available since API v1.0</font>
 
