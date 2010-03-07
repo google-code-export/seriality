@@ -82,9 +82,14 @@ if (serial.available()) {
 Intended for specialized protocols and sensor interfacing, `readUntil()` returns a string containing all characters preceding the given byte. This function is intended for use with hexadecimal notation. <font color="#999999">Available since API v1.2</font>
 
 {{{
-var message;
+var data;
+var debug;
 if (serial.available()) {
-  message = serial.readUntil(0x03);
+  data = serial.readUntil(0x03);
+  for(var i = 0; i < incomingBytes.length; ++i){
+    debug += data.charCodeAt(i) + ' ';
+  }
+  alert(debug);
 }
 }}}
 
