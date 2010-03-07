@@ -87,7 +87,7 @@ var debug = '';
 if (serial.available()) {
   data = serial.readUntil(0x03);
   for(var i = 0; i < data.length; ++i){
-    debug += data.charCodeAt(i) + ' ';
+    debug += '0x' + data.charCodeAt(i).toString(16) + ' ';
   }
   alert(debug);
 }
