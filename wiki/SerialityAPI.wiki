@@ -54,12 +54,23 @@ if (serial.available()) {
 
 ==readLine()==
 
-To complement the use of `Serial.println()` in Wiring/Arduino, the `readLine()` function returns a string containing all characters preceding a newline `\n`, carriage return `\r`, or end of text `0x03` (whichever is encountered first). Any newlines and/or carriage returns occurring at the beginning of an incoming line are omitted from the return value. The single trailing newline and/or carriage return marking the end of the line is also removed from the return value. <font color="#999999">As of API v1.2 end of text is also valid for line termination since some magnetic stripe readers and rfid readers return `ETX` after a `LF` and/or `CR`. Available since API v1.0</font>
+To complement the use of `Serial.println()` in Wiring/Arduino, the `readLine()` function returns a string containing all characters preceding a newline `\n` (omitting carriage returns `\r`). Leading and trailing newlines and carriage returns are omitted from the return value. <font color="#999999">As of API v1.2 `readLine()` only returns `\n`, it also returned on `\r` in previous versions. Available since API v1.0</font>
 
 {{{
 var message;
 if (serial.available()) {
   message = serial.readLine();
+}
+}}}
+
+==readUntil(byte)==
+
+Intended for specialized protocols and sensor interfacing, `readUntil()` returns a string containing all characters preceding the given byte. This function is intended for use with hexadecimal notation. <font color="#999999">Available since API v1.2</font>
+
+{{{
+var message;
+if (serial.available()) {
+  message = serial.readUntil(0x03);
 }
 }}}
 
@@ -88,7 +99,7 @@ serial.write(1.4142);
 serial.write(Math.SQRT2);
 }}}
 
-==writeByte(message)==
+==writeByte(byte)==
 
 The `writeByte()` function attempts to convert the supplied parameter to a single byte before writing. To complement `readByte()` it is also intended for use with hexadecimal notation. <font color="#999999">Available since API v1.0</font>
 
