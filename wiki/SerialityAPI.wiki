@@ -163,3 +163,6 @@ This is a listing of when each API version was incorporated in the downloadable 
   * 1.1
     * Mac OS X - January 11th, 2010
     * Windows - n/a
+  * 1.2
+    * Mac OS X - March 6th, 2010
+    * Windows - n/a
