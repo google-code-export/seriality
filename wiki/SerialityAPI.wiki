@@ -63,17 +63,6 @@ if (serial.available()) {
 }
 }}}
 
-==readUntil(byte)==
-
-Intended for specialized protocols and sensor interfacing, `readUntil()` returns a string containing all characters preceding the given byte. This function is intended for use with hexadecimal notation. <font color="#999999">Available since API v1.2</font>
-
-{{{
-var message;
-if (serial.available()) {
-  message = serial.readUntil(0x03);
-}
-}}}
-
 ==readJSON()==
 
 To help with protocol creation and to ease difficulties related to type conversion, support for JSON is also supported. The `readJSON()` function expects a sequence of characters beginning with a `{`. It returns all characters received as a string when an equal number of opening and closing braces are received. Any further validation is expected to be handled in Javascript. This function returns an empty string `""` on error. <font color="#999999">Available since API v1.0</font>
@@ -85,6 +74,17 @@ if (serial.available()) {
   json = serial.readJSON();
   data = eval('(' + json + ')');
   if (undefined != data) {...}
+}
+}}}
+
+==readUntil(byte)==
+
+Intended for specialized protocols and sensor interfacing, `readUntil()` returns a string containing all characters preceding the given byte. This function is intended for use with hexadecimal notation. <font color="#999999">Available since API v1.2</font>
+
+{{{
+var message;
+if (serial.available()) {
+  message = serial.readUntil(0x03);
 }
 }}}
 
