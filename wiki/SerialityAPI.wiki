@@ -54,7 +54,7 @@ if (serial.available()) {
 
 ==readLine()==
 
-To complement the use of `Serial.println()` in Wiring/Arduino, the `readLine()` function returns a string containing all characters preceding a newline `\n`. Leading and trailing newlines and carriage returns are omitted from the return value. <font color="#999999">As of API v1.2 `readLine()` only returns `\n`, it also returned on `\r` in previous versions. Available since API v1.0</font>
+To complement the use of `Serial.println()` in Wiring/Arduino, the `readLine()` function returns a string containing all characters preceding a newline `\n`. Leading and trailing newlines and carriage returns are omitted from the return value. <font color="#999999">As of API v1.2 `readLine()` only returns on `\n`, it also returned on `\r` in previous versions. Available since API v1.0</font>
 
 {{{
 var message;
