@@ -89,6 +89,7 @@ if (serial.available()) {
   for(var i = 0; i < data.length; ++i){
     debug += data.charCodeAt(i) + ' ';
   }
+  alert(debug);
 }
 }}}
 
